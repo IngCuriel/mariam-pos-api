@@ -7,7 +7,7 @@ config();
 
 const pool = new pg.Pool({
   connectionString:process.env.DATABASE_URL,
-  ssl:true
+  //ssl:true //solo activo en desarrollo
 })
 // Configuración del servidor
 // -------------------
@@ -25,6 +25,10 @@ app.get('/sales', async (req, res)=>{
   return res.json(response.rows[0])
 })
 
+app.post('/sales',  (req, res)=>{
+  console.log(req);
+  return res.status(200).json({ message: "recibido las ventas" });;
+})
 // -------------------
 // Iniciar servidor
 // -------------------
