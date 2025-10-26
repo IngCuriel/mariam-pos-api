@@ -13,7 +13,7 @@ app.get('/', (req, res)=>{
 // -------------------
 // Iniciar servidor
 // -------------------
-const PORT = 3002; // puerto fijo
-app.listen(PORT, "127.0.0.1", () => {
-  console.log(`Servidor corriendo en http://127.0.0.1:${PORT}`);
+const PORT = 3000; // puerto fijo
+app.listen(PORT,() => {
+  console.log(`Servidor corriendo en :${PORT}`);
 });
