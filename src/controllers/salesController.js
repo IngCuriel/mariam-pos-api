@@ -5,6 +5,7 @@ const prisma = new PrismaClient();
 export const getSales = async (req, res) => {
   try {
     const sales = await prisma.sale.findMany({
+      orderBy: { id: "desc" },
       include: { details: true },
     });
     res.json(sales);
