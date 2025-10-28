@@ -36,6 +36,22 @@ export const createSale = async (req, res) => {
   }
 };
 
+export const getSalesById = async (req, res) => {
+  const { id } = req.params;
+  const sale = await prisma.sale.findUnique({
+    where: { id: parseInt(id) },
+    include: {
+      details: {
+        include: {
+          product: true, // ✅ traer información del producto
+        },
+      },
+    },
+  });
+  res.json(sale);
+};
+
+
 export const createSalesWithDetails = async (req, res) => {
   try {
     const sales  = req.body;

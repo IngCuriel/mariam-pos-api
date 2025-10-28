@@ -1,11 +1,14 @@
 import express from "express";
-import { createSale, getSales, createSalesWithDetails } from "../controllers/salesController.js";
+import { createSale, getSales, getSalesById, createSalesWithDetails } from "../controllers/salesController.js";
 const router = express.Router();
  
 // 🟢 Rutas generales después
-router.get("/", getSales);
-router.post("/", createSale);
 router.post("/bulk", createSalesWithDetails)
+
+
+router.get("/", getSales);
+router.get("/:id", getSalesById);
+router.post("/", createSale);
 
 
 export default router;
