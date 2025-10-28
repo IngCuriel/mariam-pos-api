@@ -41,7 +41,7 @@ export const getSalesById = async (req, res) => {
   const sale = await prisma.sale.findUnique({
     where: { id: parseInt(id) },
     include: {
-       include: { details: true }
+       details: true
     },
   });
   res.json(sale);
