@@ -66,12 +66,13 @@ export const createSalesWithDetails = async (req, res) => {
       const createdSales = [];
 
       for (const sale of sales) {
-        const {id, folio, branchId, total, status , paymentMethod,createdAt,clientName, syncStatus, details } = sale;
+        const {id, folio, branch, cashRegister, total, status , paymentMethod,createdAt,clientName, syncStatus, details } = sale;
  
         const createdSale = await tx.sale.create({
           data: {
-            folio,
-            branchId:'PAPELERIA'+id ,
+            folio : id,
+            branch, 
+            cashRegister,
             total,
             status,
             paymentMethod,

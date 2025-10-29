@@ -15,7 +15,6 @@ datasource db {
 
 model Sale {
   id            Int           @id @default(autoincrement())
-  branchId      String        // Ej: "SUC-01" o "Yutanduchi"
   folio         String?
   total         Float
   status        String?
