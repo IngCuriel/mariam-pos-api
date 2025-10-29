@@ -3,6 +3,7 @@ const prisma = new PrismaClient();
 
 // Obtener todas las ventas
 export const getSales = async (req, res) => {
+  
   try {
     const sales = await prisma.sale.findMany({
       orderBy: { id: "desc" },
