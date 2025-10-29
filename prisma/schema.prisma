@@ -19,6 +19,10 @@ model Sale {
   folio         String?
   total         Float
   status        String?
+  //Sucursal
+  branch        String?  @default("Sucursal Defult") 
+  //Caja de cobro
+  cashRegister  String?   @default("Caja 1") 
   paymentMethod String?
   createdAt     DateTime      @default(now())
   clientName    String?

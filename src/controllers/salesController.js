@@ -18,11 +18,13 @@ export const getSales = async (req, res) => {
 // Crear una venta
 export const createSale = async (req, res) => {
   try {
-    const { folio, total, status, paymentMethod, details } = req.body;
+    const { folio, total, branch, cashRegister, status, paymentMethod, details } = req.body;
     const sale = await prisma.sale.create({
       data: {
         folio,
         total,
+        branch, 
+        cashRegister,
         status,
         paymentMethod,
         details: { create: details },
