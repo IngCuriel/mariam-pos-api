@@ -57,6 +57,7 @@ export const createSalesWithDetails = async (req, res) => {
 
     console.log('sales bulk' , sales);
     //console.log('req', req);
+    console.log('sales details', sales.details);
 
     if (!Array.isArray(sales) || sales.length === 0) {
       return res.status(400).json({ error: 'Debes enviar un arreglo de ventas válido' });
